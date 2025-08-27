@@ -64,10 +64,17 @@ header{
     justify-content: center;
 }
 
+h2{
+    color: white;
+    font-size: 36px;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .produtos{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     margin-top: 20px;
 }
 
@@ -75,6 +82,57 @@ header{
     background-color: #fff;
     border: 3px solid #3F0251;
     border-radius: 25px;
-    height: 350px;
-    width: 250px;
+    height: 390px;
+    width: 220px;
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card h3{
+    font-size: 24px;
+    color: #3F0251;
+    position: relative;
+    left: 10px;
+    bottom: 10px;
+}
+
+.card span{
+    color: #A45ECD;
+    text-decoration: line-through;
+    position: relative;
+    bottom: 5px;
+    left: 10px;
+}
+
+.card p{
+    color: #572063;
+    font-weight: bold;
+    font-size: 24px;
+    position: relative;
+    bottom: 25px;
+    left: 10px;
+}
+
+.card button{
+    background-color: #FBFF00;
+    color: #572063;
+    border: 1px solid #572063;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    bottom: 40px;
+    left: 35px;
+    padding: 5px 15px;
+    transition: 0.3s;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    width: 150px;
 }
