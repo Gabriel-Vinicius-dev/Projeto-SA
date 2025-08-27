@@ -22,8 +22,11 @@ header{
 }
 
 .logo{
-    margin-right: 10px;
+    margin-left: 50px;
     color: #7c2497;
+    font-family: "Griffy", system-ui;
+    font-weight: 1000;
+    font-style: normal;
 }
 
 .busca{
@@ -35,7 +38,8 @@ header{
     background-color: transparent;
 }
 
-.botao{
+.botao-header{
+    width: 200px;
 }
 
 /* .conta{
@@ -49,8 +53,8 @@ header{
 } */
 
 .carrinho, .conta{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 50px;
     background-color: transparent;
     color: #A45ECD;
@@ -59,9 +63,16 @@ header{
     margin-right: 10px;
 }
 
-.mais.vendidos{
-    display: flex;
-    justify-content: center;
+.carrinho svg{
+    position: relative;
+    top: 3.4px;
+    right: 2px;
+}
+
+.conta svg{
+    position: relative;
+    top: 2.5px;
+    right: 1px;
 }
 
 h2{
@@ -74,8 +85,9 @@ h2{
 .produtos{
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 60px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .card{
@@ -87,7 +99,9 @@ h2{
 }
 
 .card img{
-    width: 100%;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
     height: 200px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -135,4 +149,48 @@ h2{
     transition: 0.3s;
     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
     width: 150px;
+}
+
+.btn-left{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 3px solid #3F0251;
+    background-color: white;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    place-self: center;
+}
+
+.btn-right{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #3F0251;
+    background-color: white;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    place-self: center;
+}
+
+.nav-card{
+    display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+    margin: 20px auto;
+}
+
+.sect{
+    width: 30px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1px solid #572063;
+
+}
+
+.sect.active {
+    background-color: #FBFF00;
 }
