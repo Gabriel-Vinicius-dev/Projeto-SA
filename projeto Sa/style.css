@@ -87,7 +87,16 @@ h2{
     justify-content: center;
     gap: 60px;
     margin-top: 20px;
-    width: 100%;
+    width: 90%;
+}
+
+.section{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 90%;
+    
 }
 
 .card{
@@ -96,6 +105,7 @@ h2{
     border-radius: 25px;
     height: 390px;
     width: 220px;
+    min-width: 220px;
 }
 
 .card img{
@@ -141,29 +151,17 @@ h2{
     cursor: pointer;
     margin-top: 10px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.2rem       ;
     position: relative;
     bottom: 40px;
     left: 35px;
     padding: 5px 15px;
     transition: 0.3s;
     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-    width: 150px;
+    width: 70%;
 }
 
-.btn-left{
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    border: 3px solid #3F0251;
-    background-color: white;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    place-self: center;
-}
-
-.btn-right{
+.btn-right, .btn-left{
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -173,6 +171,7 @@ h2{
     justify-content: center; 
     align-items: center;
     place-self: center;
+    z-index: 2;
 }
 
 .nav-card{
