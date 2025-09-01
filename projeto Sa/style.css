@@ -18,6 +18,7 @@ header{
     margin: 0 auto;
     border-radius: 50px;
     margin-top: 10px;
+    margin-bottom: 50px;
     place-items: center;
 }
 
@@ -27,6 +28,7 @@ header{
     font-family: "Griffy", system-ui;
     font-weight: 1000;
     font-style: normal;
+    font-size: 35px;
 }
 
 .busca{
@@ -41,16 +43,6 @@ header{
 .botao-header{
     width: 200px;
 }
-
-/* .conta{
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    background-color: transparent;
-    color: white;
-    border: 5px solid #A45ECD;
-    cursor: pointer;
-} */
 
 .carrinho, .conta{
     height: 40px;
@@ -75,19 +67,36 @@ header{
     right: 1px;
 }
 
-h2{
+.mais-vendidos{
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    transition: 0.5s ease-in-out;
+}
+
+.mais-vendidos:hover{
+    box-shadow: #fff 0 0 50px;
+    transition: 0.5s ease-in-out;
+}
+
+.title{
     color: white;
     font-size: 36px;
-    margin-top: 20px;
+    margin-bottom: -10px;
     text-align: center;
 }
 
 .produtos{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
     justify-content: center;
-    gap: 60px;
-    margin-top: 20px;
-    width: 90%;
+    column-gap: 80px;
+    row-gap: 50px;
+    padding: 3%;
+    margin: 0 auto;
+    height: 10%;
 }
 
 .section{
@@ -96,16 +105,16 @@ h2{
     width: 90%;
     margin: 0 auto;
     max-width: 90%;
-    
 }
 
 .card{
     background-color: #fff;
-    border: 3px solid #3F0251;
+    border: 4px solid #3F0251;
     border-radius: 25px;
     height: 390px;
     width: 220px;
     min-width: 220px;
+    transition: 0.3s ease;
 }
 
 .card img{
@@ -145,7 +154,7 @@ h2{
 .card button{
     background-color: #FBFF00;
     color: #572063;
-    border: 1px solid #572063;
+    border: 2px solid #572063;
     border-radius: 50px;
     padding: 10px 20px;
     cursor: pointer;
@@ -159,6 +168,42 @@ h2{
     transition: 0.3s;
     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
     width: 70%;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px #fff;
+    filter: opacity(0.9);
+    z-index: 0;
+}
+
+.vermais{
+    text-align:center;
+    margin:20px;
+  }
+  
+.showmore {
+    margin-top: -10px;
+    padding: 13px 25px;
+    background-color: #FBFF00;
+    color: #3F0251;
+    border: 4px solid #3F0251;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    filter: opacity(0.85);
+
+}
+    
+    .showmore:hover {
+    filter: opacity(1);
+    box-shadow: #fff 0 0 20px;
+}
+
+  .hidden {
+    display: none;
 }
 
 .btn-right, .btn-left{
@@ -192,4 +237,8 @@ h2{
 
 .sect.active {
     background-color: #FBFF00;
+}
+
+html {
+    scroll-behavior: smooth;
 }
