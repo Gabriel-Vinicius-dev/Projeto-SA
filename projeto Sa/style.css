@@ -67,7 +67,10 @@ header{
     right: 1px;
 }
 
-.mais-vendidos{
+.mais-vendidos,
+.meninas,
+.meninos,
+.bebes{
     border-top: 4px solid #fff;
     border-bottom: 4px solid #fff;
     width: 100%;
@@ -77,6 +80,21 @@ header{
 }
 
 .mais-vendidos:hover{
+    box-shadow: #fff 0 0 50px;
+    transition: 0.5s ease-in-out;
+}
+
+.meninas:hover{
+    box-shadow: #fff 0 0 50px;
+    transition: 0.5s ease-in-out;
+}
+
+.meninos:hover{
+    box-shadow: #fff 0 0 50px;
+    transition: 0.5s ease-in-out;
+}
+
+.bebes:hover{
     box-shadow: #fff 0 0 50px;
     transition: 0.5s ease-in-out;
 }
@@ -179,7 +197,8 @@ header{
 
 .vermais{
     text-align:center;
-    margin:20px;
+    margin-bottom: 10vw;
+    margin-bottom: 5vw;
   }
   
 .showmore {
@@ -194,7 +213,6 @@ header{
     cursor: pointer;
     transition: 0.3s;
     filter: opacity(0.85);
-
 }
     
     .showmore:hover {
