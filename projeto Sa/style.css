@@ -41,6 +41,8 @@ header{
     cursor: text;
     border: 3px solid #572063;
     background-color: transparent;
+    outline: none;    
+    padding-left: 15px;
 }
 
 .botao-header{
@@ -73,21 +75,20 @@ header{
 
 nav{
     position: fixed;
-    top: 58px; /* Espaço abaixo do header */
+    top: 62px; /* Espaço abaixo do header */
     left: 50%;
     transform: translateX(-50%);
     background-color: #FBFF00;
-    width: 60%;
+    width: 55%;
     height: 55px;
-    /* border-radius: 50px; */
-    z-index: 9;
+    z-index: 10;
     margin: 0;
 
     clip-path: polygon(
         0 0,        /* canto superior esquerdo */
         100% 0,     /* canto superior direito */
-        90% 100%,  /* canto inferior direito */
-        10% 100%       /* canto inferior esquerdo inclinado */
+        85% 100%,  /* canto inferior direito */
+        15% 100%       /* canto inferior esquerdo inclinado */
       );
 }
 
@@ -116,12 +117,13 @@ nav ul li a{
     font-weight: bold;
     border-radius: 50px;
     transition: 0.3s ease-in;
-
+    z-index: 11;
 }
 
 nav ul li:hover{
-    border: 3px solid #572063;
-    box-shadow: #fff 0 0 20px;
+    border-bottom: 4px solid #3F0251;
+    box-shadow: #fff 0 0 30px;
+    transform: translateY(-3px);
     transition: 0.3s ease-in-out;
 }
 
@@ -131,6 +133,9 @@ nav ul li:hover{
 
 
 /* inicio conteudo */
+
+
+
 .mais-vendidos,
 .meninas,
 .meninos,
@@ -250,6 +255,14 @@ nav ul li:hover{
     transition: 0.3s;
     box-shadow: 0 3px 5px rgba(0,0,0,0.1);
     width: 70%;
+}
+
+.card button:hover{
+    background-color: #3F0251;
+    color: #FBFF00;
+    box-shadow: 0 0 15px #3F0251;
+    transform: translateY(-3px);
+    transition: 0.3s;
 }
 
 .card:hover{
