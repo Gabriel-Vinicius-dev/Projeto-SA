@@ -6,25 +6,28 @@ body{
 }
 
 header{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
     height: 50px;
     background-color: #FBFF00;
     color: #ffffff;
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
     gap: 150px;
     margin: 0 auto;
     border-radius: 50px;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-top: -10px;
     place-items: center;
+    z-index: 10;
 }
 
 .logo{
     margin-left: 50px;
-    color: #7c2497;
+    color: #572063;
     font-family: "Griffy", system-ui;
     font-weight: 1000;
     font-style: normal;
@@ -36,7 +39,7 @@ header{
     width: 500px;
     border-radius: 50px;
     cursor: text;
-    border: 3px solid #A45ECD;
+    border: 3px solid #572063;
     background-color: transparent;
 }
 
@@ -49,8 +52,8 @@ header{
     width: 40px;
     border-radius: 50px;
     background-color: transparent;
-    color: #A45ECD;
-    border: 3px solid #A45ECD;
+    color: #572063;
+    border: 3px solid #572063;
     cursor: pointer;
     margin-right: 10px;
 }
@@ -59,6 +62,7 @@ header{
     position: relative;
     top: 3.4px;
     right: 2px;
+    color: #572063;
 }
 
 .conta svg{
@@ -67,6 +71,66 @@ header{
     right: 1px;
 }
 
+nav{
+    position: fixed;
+    top: 58px; /* Espaço abaixo do header */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FBFF00;
+    width: 60%;
+    height: 55px;
+    /* border-radius: 50px; */
+    z-index: 9;
+    margin: 0;
+
+    clip-path: polygon(
+        0 0,        /* canto superior esquerdo */
+        100% 0,     /* canto superior direito */
+        90% 100%,  /* canto inferior direito */
+        10% 100%       /* canto inferior esquerdo inclinado */
+      );
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 50px 0;
+}
+
+nav ul li{
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #572063;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s ease-in;
+
+}
+
+nav ul li:hover{
+    border: 3px solid #572063;
+    box-shadow: #fff 0 0 20px;
+    transition: 0.3s ease-in-out;
+}
+
+/* fim header */
+
+
+
+
+/* inicio conteudo */
 .mais-vendidos,
 .meninas,
 .meninos,
