@@ -121,9 +121,17 @@ nav ul li a{
 }
 
 nav ul li:hover{
+    border-top: 0.1px solid #3f025117;
     border-bottom: 4px solid #3F0251;
     box-shadow: #fff 0 0 30px;
     transform: translateY(-3px);
+    transition: 0.3s ease-in-out;
+}
+
+nav ul li:active {
+    border: none;
+    box-shadow: #fff 0 0 30px;
+    transform: translateY(3px);
     transition: 0.3s ease-in-out;
 }
 
@@ -169,8 +177,8 @@ nav ul li:hover{
     background-color: white;
     border-radius: 100px;
     border: 3px solid #3F0251;
-    font-size: 24px;
-    padding: 0 3px 3px 0;
+    font-size: 25px;
+    padding: 0 3px 5px 0;
     width: 40px;
     height: 40px;
     color: #3F0251;
@@ -190,8 +198,8 @@ nav ul li:hover{
 
 
 .mais-vendidos{
-    border-top: 4px solid #fff;
-    /* border-bottom: 4px solid #fff; */
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     width: 100%;
     height: auto;
     margin: 20px auto;
@@ -199,8 +207,8 @@ nav ul li:hover{
 }
 
 .meninas{
-    border-top: 4px solid #fff;
-    /* border-bottom: 4px solid #fff; */
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     width: 100%;
     height: auto;
     margin: 20px auto;
@@ -208,8 +216,8 @@ nav ul li:hover{
 }
 
 .meninos{
-    /* border-top: 4px solid #fff; */
-    border-bottom: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     width: 100%;
     height: auto;
     margin: 20px auto;
@@ -217,8 +225,8 @@ nav ul li:hover{
 }
 
 .bebes{
-    /* border-top: 4px solid #fff; */
-    border-bottom: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     width: 100%;
     height: auto;
     margin: 20px auto;
@@ -226,21 +234,29 @@ nav ul li:hover{
 }
 
 .mais-vendidos:hover{
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
     box-shadow: #fff 0 0 50px;
     transition: 0.5s ease-in-out;
 }
 
 .meninas:hover{
+    border-top: 5px solid #fff;
+    border-bottom: 5px solid #fff;
     box-shadow: #fff 0 0 50px;
     transition: 0.5s ease-in-out;
 }
 
 .meninos:hover{
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
     box-shadow: #fff 0 0 50px;
     transition: 0.5s ease-in-out;
 }
 
 .bebes:hover{
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
     box-shadow: #fff 0 0 50px;
     transition: 0.5s ease-in-out;
 }
@@ -380,4 +396,5 @@ nav ul li:hover{
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 200px;
 }
