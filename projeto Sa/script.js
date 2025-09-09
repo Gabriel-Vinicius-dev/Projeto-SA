@@ -74,3 +74,23 @@ prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateSlide();
 });
+
+
+const btnTopo = document.getElementById("btnTopo");
+
+// Mostrar o botão quando rolar 200px
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 200) {
+    btnTopo.style.display = "block";
+  } else {
+    btnTopo.style.display = "none";
+  }
+};
+
+// Voltar ao topo suavemente
+btnTopo.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
