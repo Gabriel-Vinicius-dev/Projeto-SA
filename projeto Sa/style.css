@@ -32,6 +32,7 @@ header{
     font-weight: 1000;
     font-style: normal;
     font-size: 35px;
+    cursor: pointer;
 }
 
 .busca{
@@ -97,7 +98,7 @@ nav ul{
     justify-content: center;
     align-items: center;
     height: 100%;
-    gap: 50px;
+    gap: 2%;
     list-style: none;
     padding: 0;
     margin: 5px 0 50px 0;
@@ -390,11 +391,33 @@ nav ul li:active {
     box-shadow: #fff 0 0 20px;
 }
 
+#btnTopo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: #fff;
+  color: #3F0251;
+  border: 2px solid #3F0251;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 23px;
+  transition: 0.3s;
+}
+
+#btnTopo:hover {
+  background: #3F0251;
+  border: 2px solid #3F0251;
+  color: #fff;
+}
+
+
   .hidden {
     display: none;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 200px;
+    scroll-padding-top: 100px;
 }
