@@ -94,3 +94,86 @@ btnTopo.onclick = function () {
     behavior: "smooth"
   });
 };
+
+
+const BotoesAdicionar = document.querySelectorAll(".adicionar");
+const badge = document.getElementById("badge-carrinho");
+const sidebarCarrinho = document.getElementById("sidebar-carrinho");
+const abrirCarrinho = document.getElementById("abrir-carrinho");
+const fecharCarrinho = document.getElementById("fechar-carrinho");
+const listaCarrinho = document.getElementById("lista-carrinho");
+const footerCarrinho = document.querySelector(".footer-carrinho");
+const totalCarrinho = document.getElementById("total-carrinho");
+const botaoResetar = document.getElementById("botao-resetar");
+
+const sidebarLogin = document.getElementById("sidebar-login");
+const abrirLogin = document.getElementById("abrir-login");
+const fecharLogin = document.getElementById("fechar-login");
+
+// Função para atualizar badge e total
+function atualizarCarrinho() {
+    const itens = listaCarrinho.querySelectorAll("li:not(#carrinho-vazio)");
+    const msgVazio = document.getElementById("carrinho-vazio");
+  
+    badge.textContent = itens.length;
+    badge.style.display = itens.length > 0 ? "inline-block" : "none";
+    footerCarrinho.style.display = itens.length > 0 ? "block" : "none";
+  
+    // Mostra/esconde mensagem de vazio
+    msgVazio.style.display = itens.length === 0 ? "flex" : "none";
+  
+    // Calcular total
+    let total = 0;
+    itens.forEach(item => {
+      const precoTexto = item.querySelector("p:last-child").textContent
+        .replace("R$ ", "")
+        .replace(",", ".");
+      total += parseFloat(precoTexto);
+    });
+  
+    totalCarrinho.textContent = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
+  }
+  
+  
+
+// Adicionar produto
+BotoesAdicionar.forEach(botao => {
+  botao.addEventListener("click", () => {
+    const card = botao.closest(".card");
+    const nome = card.querySelector("h3").textContent;
+    const preco = card.querySelector("p").textContent;
+    const imagem = card.querySelector("img").src;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <img src="${imagem}" alt="${nome}">
+      <div>
+        <p><strong>${nome}</strong></p>
+        <p>${preco}</p>
+      </div>
+      <button class="remover">X</button>
+    `;
+
+    li.querySelector(".remover").addEventListener("click", () => {
+      li.remove();
+      atualizarCarrinho();
+    });
+
+    listaCarrinho.appendChild(li);
+    atualizarCarrinho();
+  });
+});
+
+// Botão resetar
+botaoResetar.addEventListener("click", () => {
+  listaCarrinho.innerHTML = "";
+  atualizarCarrinho();
+});
+
+// Abrir/fechar carrinho
+abrirCarrinho.addEventListener("click", () => sidebarCarrinho.classList.add("ativo"));
+fecharCarrinho.addEventListener("click", () => sidebarCarrinho.classList.remove("ativo"));
+
+// Abrir/fechar login
+abrirLogin.addEventListener("click", () => sidebarLogin.classList.add("ativo"));
+fecharLogin.addEventListener("click", () => sidebarLogin.classList.remove("ativo"));
