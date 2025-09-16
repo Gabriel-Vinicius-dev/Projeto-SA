@@ -104,7 +104,9 @@ const fecharCarrinho = document.getElementById("fechar-carrinho");
 const listaCarrinho = document.getElementById("lista-carrinho");
 const footerCarrinho = document.querySelector(".footer-carrinho");
 const totalCarrinho = document.getElementById("total-carrinho");
-const botaoResetar = document.getElementById("botao-resetar");
+const botaoFinalizar = document.getElementById("botao-finalizar");
+const botaoContinuar = document.getElementById("botao-continuar");
+const botaoContinuarVazio = document.getElementById("sair-carrinho");
 
 const sidebarLogin = document.getElementById("sidebar-login");
 const abrirLogin = document.getElementById("abrir-login");
@@ -117,7 +119,7 @@ function atualizarCarrinho() {
   
     badge.textContent = itens.length;
     badge.style.display = itens.length > 0 ? "inline-block" : "none";
-    footerCarrinho.style.display = itens.length > 0 ? "block" : "none";
+    footerCarrinho.style.display = itens.length > 0 ? "flex" : "none";
   
     // Mostra/esconde mensagem de vazio
     msgVazio.style.display = itens.length === 0 ? "flex" : "none";
@@ -132,15 +134,14 @@ function atualizarCarrinho() {
     });
   
     totalCarrinho.textContent = `Total: R$ ${total.toFixed(2).replace(".", ",")}`;
-  }
+}
   
-  
-
 // Adicionar produto
 BotoesAdicionar.forEach(botao => {
   botao.addEventListener("click", () => {
     const card = botao.closest(".card");
     const nome = card.querySelector("h3").textContent;
+    const antigoPreco = card.querySelector("span").textContent;
     const preco = card.querySelector("p").textContent;
     const imagem = card.querySelector("img").src;
 
@@ -149,10 +150,14 @@ BotoesAdicionar.forEach(botao => {
       <img src="${imagem}" alt="${nome}">
       <div>
         <p><strong>${nome}</strong></p>
-        <p>${preco}</p>
+        <p>${antigoPreco}</p>
+        <p><strong>${preco}</strong></p>
       </div>
-      <button class="remover">X</button>
-    `;
+      <button class="remover">
+        <svg width="20" height="20" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.33325 24C3.59992 24 2.97214 23.7389 2.44992 23.2167C1.9277 22.6944 1.66659 22.0667 1.66659 21.3333V4H0.333252V1.33333H6.99992V0H14.9999V1.33333H21.6666V4H20.3333V21.3333C20.3333 22.0667 20.0721 22.6944 19.5499 23.2167C19.0277 23.7389 18.3999 24 17.6666 24H4.33325ZM17.6666 4H4.33325V21.3333H17.6666V4ZM6.99992 18.6667H9.66658V6.66667H6.99992V18.6667ZM12.3333 18.6667H14.9999V6.66667H12.3333V18.6667Z" fill="#572063"/>
+        </svg>
+      </button>`;
 
     li.querySelector(".remover").addEventListener("click", () => {
       li.remove();
@@ -164,10 +169,19 @@ BotoesAdicionar.forEach(botao => {
   });
 });
 
-// Botão resetar
-botaoResetar.addEventListener("click", () => {
-  listaCarrinho.innerHTML = "";
-  atualizarCarrinho();
+// Botão finalizar compra (aqui você pode implementar a lógica real)
+botaoFinalizar.addEventListener("click", () => {
+  alert("Finalizar compra ainda não implementado.");
+});
+
+// Botão continuar comprando (fecha o carrinho)
+botaoContinuar.addEventListener("click", () => {
+  sidebarCarrinho.classList.remove("ativo");
+});
+
+// Botão continuar comprando do carrinho vazio (fecha o carrinho)
+botaoContinuarVazio.addEventListener("click", () => {
+  sidebarCarrinho.classList.remove("ativo");
 });
 
 // Abrir/fechar carrinho
@@ -177,3 +191,4 @@ fecharCarrinho.addEventListener("click", () => sidebarCarrinho.classList.remove(
 // Abrir/fechar login
 abrirLogin.addEventListener("click", () => sidebarLogin.classList.add("ativo"));
 fecharLogin.addEventListener("click", () => sidebarLogin.classList.remove("ativo"));
+a
