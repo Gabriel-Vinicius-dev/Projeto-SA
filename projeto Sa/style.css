@@ -5,6 +5,19 @@ body{
     background-color: #895D93;
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2); /* leve escurecimento */
+    z-index: 900; /* menor que o sidebar (1000) */
+    display: none; /* inicialmente escondido */
+    cursor: pointer; /* indica que pode clicar para fechar */
+  }
+
 header{
     position: fixed;
     left: 50%;
@@ -570,6 +583,7 @@ html {
     color: #572063;
     position: relative;
     left: -30px;
+    top: -4px;
     margin-left: 47px;
 }
 
@@ -584,7 +598,7 @@ html {
     border: 0;
     height: 1px;
     background: #572063;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -675,12 +689,49 @@ html {
 /* ------------------------------
             CONTEUDO DO CARRINHO
 ------------------------------ */
-.remover{
-    border: none;
-    background: none;
-    color: #572063;
+/* .carPord-img{
+    position: relative;
+    left: 10px;
+    background-color: #fff;
+    width: 150px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+
+.infos-prod{
+    width: 100%;
+    height: 100px;
+    align-items: center;
 }
 
+.infos-prod strong{
+    font-size: 17px;
+}
+
+.pecoAntigo{
+    font-size: 12px;
+    text-decoration: line-through;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.remover{
+    right: 10px;
+    border:1px solid transparent;
+    background: none;
+    color: #572063;
+    display: flex;
+    transition: 0.3s;
+
+}
+
+.remover:hover{
+    border:1px solid #3F0251;
+    transition: 0.3s;
+}
 /* ------------------------------
     FOOTER DO CARRINHO
 ------------------------------ */
@@ -704,9 +755,11 @@ html {
     color: black;
 }
 
-.footer-carrinho button {
+.footer-carrinho :nth-child(2){
     width: 100%;
     padding: 10px;
+    font-size: 15px;
+
 
     border: 3px solid #3F0251;
     border-radius: 8px;
@@ -718,12 +771,27 @@ html {
     transition: 0.3s;
 }
 
-.footer-carrinho button:hover {
+.footer-carrinho :nth-child(2):hover {
     background: #FBFF00;
     border: 3px solid #3F0251;
     color: #3F0251;
     box-shadow: 0 0 15px #3F0251;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.continuar-comprando1{
+    background-color: transparent;
+    border: none;
+    color: #572063f1;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.continuar-comprando1:hover{
+    color: #3F0251;
+    text-decoration: underline;
     transition: 0.3s;
 }
 
