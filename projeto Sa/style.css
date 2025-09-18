@@ -517,10 +517,34 @@ html {
     scroll-padding-top: 150px;
 }
 
-::-webkit-scrollbar{
-    display: none;
-}
-
+/* largura da barra */
+::-webkit-scrollbar {
+    width: 10px;  /* vertical */
+    height: 10px; /* horizontal */
+    transition: 0.5s;
+  }
+  
+  /* fundo da área do scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #572063; /* cor de fundo */
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  
+  /* parte que desliza */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #FBFF00, #FEFFB8);
+    border-radius: 10px;
+    border: 1px solid #0a0a0a; /* deixa um espaçamento */
+    transition: 0.5s;
+  }
+  
+  /* efeito hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #895D93, #FBFF00);
+    transition: 0.5s;
+  }
+  
 
 /* ------------------------------
     SIDEBAR carrinho
@@ -545,7 +569,7 @@ html {
     right: 0;
 }
 
-/* .topCarrinho {
+.topCarrinho {
     flex-shrink: 0;
     background-color: #FEFFB8;
     height: 105px;
@@ -555,7 +579,7 @@ html {
     box-sizing: border-box;
     position: relative;
     z-index: 10;
-    } */
+    }
 
 #fechar-carrinho {
     position: relative;
@@ -689,18 +713,6 @@ html {
 /* ------------------------------
             CONTEUDO DO CARRINHO
 ------------------------------ */
-/* .carPord-img{
-    position: relative;
-    left: 10px;
-    background-color: #fff;
-    width: 150px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-
-
 .infos-prod{
     width: 100%;
     height: 100px;
@@ -729,9 +741,17 @@ html {
 }
 
 .remover:hover{
+    background-color: #895d9325;
     border:1px solid #3F0251;
+    transform: scale(1.1);
     transition: 0.3s;
 }
+
+.remover:active{
+    background-color: #895D93;
+    transition: 0.3s;
+}
+
 /* ------------------------------
     FOOTER DO CARRINHO
 ------------------------------ */
